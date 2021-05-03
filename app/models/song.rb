@@ -17,7 +17,7 @@ class Song < ActiveRecord::Base
   end
 
   def genre_id
-    self.genre ? self.genre.id : nil
+    self.genre ? self.genre.name : nil
   end
 =begin
   def notes_ids=(names)
