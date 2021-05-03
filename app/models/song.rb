@@ -21,8 +21,8 @@ class Song < ActiveRecord::Base
   end
 
   def note_ids=(contents)
-    contents.each do |content|
-      note = Note.create(content: content) if content != nil
+    contents.compact.each do |content|
+      note = Note.create(content: content) if content != 
       self.notes << note
     end
   end
