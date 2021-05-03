@@ -20,10 +20,10 @@ class Song < ActiveRecord::Base
     self.genre ? self.genre.name : nil
   end
 
-  def note_ids=(names)
+  def note_ids=(contents)
     binding.pry
-    names.each do |name|
-      note = Note.find_or_create_by(name: name)
+    contents.each do |content|
+      note = Note.find_or_create_by(content: content)
       self.notes << note
     end
   end
