@@ -23,7 +23,7 @@ class Song < ActiveRecord::Base
   def note_ids=(contents)
     binding.pry
     contents.each do |content|
-      note = Note.create_by(content: content)
+      note = Note.create(content: content)
       self.notes << note
     end
   end
